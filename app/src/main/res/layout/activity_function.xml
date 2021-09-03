@@ -15,4 +15,14 @@
         android:text="按钮"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn1"
+        android:text="本地1"
+        app:layout_constraintLeft_toRightOf="@id/btn"
+        app:layout_constraintTop_toTopOf="@id/btn"
+        android:layout_marginLeft="50dp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

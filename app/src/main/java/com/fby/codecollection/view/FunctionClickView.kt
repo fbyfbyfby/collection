@@ -21,8 +21,8 @@ class FunctionClickView : androidx.appcompat.widget.AppCompatButton {
         defStyleAttr
     )
 
-    fun setOnClickFunctionListener(f: (View) -> Unit) {
-        val clickListener = OnClickListener { view -> f.invoke(view) }
+    fun setOnClickFunctionListener(f: ((View) -> Unit)?) {
+        val clickListener = OnClickListener { view -> f?.invoke(view) }
         setOnClickListener(clickListener)
     }
 }
