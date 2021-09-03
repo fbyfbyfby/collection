@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         processData()
         arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, listName)
         sp.adapter = arrayAdapter
+        arrayAdapter.setDropDownViewResource(R.layout.spinner_layout)
         sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 if (listName[p2] == "请选择") return
