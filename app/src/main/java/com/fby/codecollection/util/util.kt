@@ -3,6 +3,8 @@ package com.fby.codecollection.util
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
+import android.content.res.Resources
+import android.util.TypedValue
 
 /**
 
@@ -20,3 +22,12 @@ fun getActivities(context: Context): ArrayList<ActivityInfo> {
     }
     return activities
 }
+
+val Float.px
+    get() = TypedValue.applyDimension(
+        TypedValue.COMPLEX_UNIT_DIP,
+        this,
+        Resources.getSystem().displayMetrics
+    )
+val Float.dp
+    get() = this / Resources.getSystem().displayMetrics.density + 0.5f
