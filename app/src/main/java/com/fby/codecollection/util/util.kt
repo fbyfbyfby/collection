@@ -31,3 +31,5 @@ val Float.px
     )
 val Float.dp
     get() = this / Resources.getSystem().displayMetrics.density + 0.5f
+val Int.dp
+    get() = this.toFloat().dp
