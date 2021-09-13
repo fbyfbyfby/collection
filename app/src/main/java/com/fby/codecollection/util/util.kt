@@ -30,6 +30,10 @@ val Float.px
         Resources.getSystem().displayMetrics
     )
 val Float.dp
-    get() = this / Resources.getSystem().displayMetrics.density + 0.5f
+    get() = TypedValue.applyDimension(
+        TypedValue.COMPLEX_UNIT_DIP,
+        this,
+        Resources.getSystem().displayMetrics
+    )
 val Int.dp
     get() = this.toFloat().dp
