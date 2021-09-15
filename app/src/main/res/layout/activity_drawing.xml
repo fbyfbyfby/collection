@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".DrawingActivity">
 
-    <com.fby.codecollection.view.ClipAndCameraView2
+    <com.fby.codecollection.view.CircleView
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
