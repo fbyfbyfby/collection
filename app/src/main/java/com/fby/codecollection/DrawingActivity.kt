@@ -1,12 +1,10 @@
 package com.fby.codecollection
 
-import android.animation.AnimatorSet
-import android.animation.Keyframe
-import android.animation.ObjectAnimator
-import android.animation.PropertyValuesHolder
+import android.animation.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.fby.codecollection.util.dp
+import com.fby.codecollection.view.ProvinceView
 import kotlinx.android.synthetic.main.activity_drawing.*
 
 class DrawingActivity : AppCompatActivity() {
@@ -47,8 +45,35 @@ class DrawingActivity : AppCompatActivity() {
         holderAnimator.startDelay = 1000
         holderAnimator.duration = 2000
         // holderAnimator.start()
+        val length = 200.dp
+        val keyframe1 = Keyframe.ofFloat(0f, 0f)
+        val keyframe2 = Keyframe.ofFloat(0.2f, 1.5f * length)
+        val keyframe3 = Keyframe.ofFloat(0.8f, 0.6f * length)
+        val keyframe4 = Keyframe.ofFloat(1f, 1f * length)
+        val keyframeHolder = PropertyValuesHolder.ofKeyframe(
+            "translationX",
+            keyframe1,
+            keyframe2,
+            keyframe3,
+            keyframe4
+        )
+        val animator = ObjectAnimator.ofPropertyValuesHolder(view, keyframeHolder)
+        animator.startDelay = 1000
+        animator.duration = 2000
+        //animator.start()
+        val animator1 = ObjectAnimator.ofObject(view, "province",
+            ProvinceView.ProvinceEvaluator(), "台湾省")
+        //TypeEvaluator由动画完成度来算数值
+        animator1.startDelay = 1000
+        animator1.duration = 10000
+        animator1.start()
 
-//        val keyframe1 = Keyframe.ofFloat(0f, 0f)
-//        val keyframe2 = Keyframe.ofFloat(0.2f,)
+
+//        view.animate()
+//            .translationY(200.dp)
+//            .withLayer()   在动画过程中开启硬件级别的莉萍缓冲
     }
+
+
+
 }
